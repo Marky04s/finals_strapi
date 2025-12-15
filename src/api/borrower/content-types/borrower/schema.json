@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "borrowers",
+  "info": {
+    "singularName": "borrower",
+    "pluralName": "borrowers",
+    "displayName": "borrower"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "borrower"
+    }
+  }
+}
